@@ -1,9 +1,16 @@
 {
-  "routes": [
+  "functions": {
+    "api/corrigir.js": {
+      "maxDuration": 30,
+      "memory": 1024
+    }
+  },
+  "headers": [
     {
-      "src": "/api/corrigir",
-      "dest": "/api/corrigir.js",
-      "methods": ["POST"]
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
     }
   ]
 }
